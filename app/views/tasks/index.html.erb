@@ -1,0 +1,20 @@
+<%# <head>
+<script src="https://kit.fontawesome.com/406e275bc8.js" crossorigin="anonymous"></script>
+
+</head> %>
+
+
+<h1>All your tasks:</h1>
+<% @tasks.each do |task| %>
+
+  <h2><%= link_to task.title, task_path(task) %></h2>
+
+  <% if task.completed %>
+    <i class="fa-regular fa-square-check"></i>
+  <% else %>
+    <i class="fa-regular fa-square"></i>
+  <% end %>
+
+<% end %>
+
+<p><%= link_to "Create task", create_task_path %></p>
